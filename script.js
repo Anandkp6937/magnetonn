@@ -8,9 +8,23 @@ const modelBar=document.querySelector('.fa-bars');
 const model=document.querySelector('.modal');
 const closeModal=document.querySelector('.fa-circle-xmark');
 const section2=document.querySelector('.section2');
+const searchBar=document.getElementById('search');
+const searchBtn=document.querySelector('.search-btn');
+const footer=document.querySelector('.footer');
 let datafromApi;
 let modifiedData;
+searchBar.addEventListener('input',searchBlogPost)
+function searchBlogPost(e){
+     let keyWord=e.target.value;
+     let newSortedPostsData=modifiedData.filter((word)=>word.title.toLowerCase().includes(keyWord.toLowerCase()));
+     section2.innerHTML='';
+     footer.style.display='none';
+     createCards(newSortedPostsData);
+     if(newSortedPostsData.length===modifiedData.length){
+          footer.style.display='flex';
+     }
 
+}
 function spiltDate(dates){
      const dateString=dates;
      const date = new Date(dateString);
@@ -24,9 +38,9 @@ async function grabData(){
      try{
           let postData=await fetch('https://magnetonn-in-backend.vercel.app/');
           datafromApi=await postData.json();
+               footer.style.display='flex'
           sortPostBylatest(datafromApi)
           createCards(modifiedData);
-          // createCards(datafromApi)
      }
      catch(err){
           console.log('error occured:',err);
@@ -35,6 +49,7 @@ async function grabData(){
 }
 
 function createCards(arr){
+
      arr.forEach((data)=>{
           section2.innerHTML +=`<div class="post-card">
                <div class="post-title"><h3 class="postHeading">${data.title}</h3></div>
@@ -67,14 +82,7 @@ function connectInfoDisplay(){
           connectBar.style.transform='scale(1)';
      },700);
 }
-function toolFunctionDisplay(){
-     updateInfo.style.transform='translateY(0px)';
-     setTimeout(()=>{
-          updateInfo.style.transform='translateY(-100px)';
-     },2000);
-}
-tools.addEventListener('click',toolFunctionDisplay)
-tools2.addEventListener('click',toolFunctionDisplay)
+
 connectBtn.addEventListener('click',connectInfoDisplay);
 connectBtn2.addEventListener('click',connectInfoDisplay);
 
