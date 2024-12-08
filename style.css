@@ -85,7 +85,7 @@ margin-top:.5em;
 font-weight:normal;
 }
 .readMore{
-     width:30%;
+     width:100%;
     margin-top:10px;
     padding:10px 20px;
     background-color:rgb(36, 36, 73);
@@ -93,9 +93,10 @@ font-weight:normal;
     border-radius:5px;
     color:#fff;
     font-weight:bold;
-    
+    margin-right:1em;
 
 }
+
 
 .footerSec{
      display: flex;
