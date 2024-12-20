@@ -64,11 +64,13 @@ li,a{
 }
 .navigation-component ul{
      display: flex;
-     justify-content:space-around;
+     justify-content:space-between;
      align-items: center;
 
 }
-
+.darker{
+     font-weight:500;
+}
 .logo{
      color:rgb(5, 5, 100);
      font-weight:bold;
