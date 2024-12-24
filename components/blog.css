@@ -25,6 +25,23 @@ li,a{
      flex-direction: column;
      padding:0px 30px;
 }
+.light{
+     font-weight:lighter;
+     opacity:0.8;
+     font-size:0.7em;
+}
+.link-color{
+     color:blue;
+}
+.fig{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width:75%;
+}
+.fig img{
+     width:100%;
+}
 .blog-title {
      margin-top:-4.5em;
      padding-top:5em;
@@ -48,6 +65,9 @@ li,a{
      padding:10px 0px;
      font-weight:600;
 }
+math {
+     font-size:2em; /* Adjust font size as needed */
+ }
 .para{
      padding:15px 0px;
 }
@@ -170,6 +190,7 @@ font-size:1.5em;
      body{
           font-size:15px;
           /* background:blue; */
+        
      }
      .pader{
           padding:0em 11em;
@@ -194,7 +215,7 @@ font-size:1.5em;
      body{
          /* background: blue; */
           font-size:15px;
-         
+         line-height:55px;
      }
      .pader{
           padding:0em 22em;
